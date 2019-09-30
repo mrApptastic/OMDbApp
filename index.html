@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="movieApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="API Test">
+    <meta name="keywords" content="API Test">
+    <meta name="author" content="Henrik Beske">
+    <link rel="icon"
+          type="image/png"
+          href="media/camera-icon.png">
+    <title>Mr. Movie API-Test</title>
+    <!-- Styles -->
+    <link href="styles/bootstrap.css" rel="stylesheet">
+    <link href="styles/fontAwesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
+    <link href="styles/toastr.css" rel="stylesheet">
+    <link href="styles/mrStyleLight.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Mr. Movie API-Test</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#movies">Movie Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#fun">Fun and Games</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div id="page-top"></div>
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Mr. Movie API-Test</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">Welcome to my OMDb API-test site.</h2>
+                <a href="#movies" class="btn btn-primary js-scroll-trigger">Go to API Test</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="movies" class="movie-section text-center">
+        <div class="container">
+            <h2 class="mrsGold">Test the OMDb API</h2>
+            <br/>
+            <div ng-view ng-init="apiUrl = 'http://www.omdbapi.com'; apiKey = '74adaf2c'"></div>
+        </div>
+    </section>
+
+    <!-- Fun Section -->
+    <section id="fun" class="fun-section" style="background: url('media/12-cinemas.jpg'); background-position: center top; background-size: auto 100%">
+        <div class="text-center">
+            <h2 class="mrsGold">Fun and games</h2>
+        </div>
+        <div class="container-fluid" id="mrSnakeyContainer">
+            <canvas id="mrRect" style="background-color: black !important;"></canvas>
+            <canvas id="canvasBanditten" style="background: url('media/popcorn.jpg'); background-position: center top; background-size: auto 100%"></canvas>
+            <div id="toolUha" style="height: 100%; width: calc(100% + 30px);background: gold;padding: 5px;"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="mrsGold">About the project</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto text-center">
+                    <div class="container">
+
+                        <!-- Project One Row -->
+                        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                            <div class="col-lg-6">
+                                <img class="img-fluid" src="media/cinema.jpg" alt="">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="bg-black text-center h-100 project">
+                                    <div class="d-flex h-100">
+                                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                                            <h4 class="text-white">The Mr. Movie Project</h4>
+                                            <div class="mb-0" style="color: white !important">This project was made to demonstrate some of my skills as a web developer.</div>
+                                            <hr class="d-none d-lg-block mb-0 ml-0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Two Row -->
+                        <div class="row justify-content-center no-gutters">
+                            <div class="col-lg-6">
+                                <img class="img-fluid" src="media/le-cinema.jpg" alt="">
+                            </div>
+                            <div class="col-lg-6 order-lg-first">
+                                <div class="bg-black text-center h-100 project">
+                                    <div class="d-flex h-100">
+                                        <div class="project-text w-100 my-auto text-center text-lg-right">
+                                            <h4 class="text-white">Who am I?</h4>
+                                            <div class="mb-0" style="color: white !important">My name is Henrik Beske. I am a passionate and creative full-stack web developer. Feel free to contact me.</div>
+                                            <hr class="d-none d-lg-block mb-0 mr-0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section bg-black">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Address</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50">Sallingsundvej 18 st th, 9220 Aalborg &Oslash;st</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50" ng-init="myEmail='henrikbeske@gmail.com'">
+                                <a href="mailto:{{myEmail}}">{{myEmail}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50" ng-init="myPhone='+4524497555'">{{myPhone}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social d-flex justify-content-center" ng-init="myGitHub = 'https://github.com/mrApptastic/'">
+                <a href="{{myGitHub}}" class="mx-2" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black small text-center text-white-50">
+        <div class="container">
+            Copyright &copy; Mr. Movie API-Test {{thisYear}}
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/jQueryEasing.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/toastr.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/mrMr.js"></script>
+    <script src="scripts/ui-bootstrap.js"></script>
+    <script src="scripts/movieApp.js"></script>
+    <script src="scripts/captainCanvas.js"></script>
+    <script src="scripts/mrSnakey.js"></script>
+    <script src="scripts/rectAngular.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+
