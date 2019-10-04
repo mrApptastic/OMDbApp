@@ -47,7 +47,11 @@ setTimeout(function () {
 
     var per = new rectAngular("mrRect",
         baseWidth,
-        baseHeight);
+        baseHeight,
+        "Movie Pong",
+        "Gold",
+        "30px 'Quicksand'"
+        );
     var bo = new captainCanvas("canvasBanditten", "toolUha");
     document.getElementById("canvasBanditten").width = baseWidth;
     document.getElementById("canvasBanditten").height = baseHeight;

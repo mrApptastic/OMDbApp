@@ -1,7 +1,7 @@
 /* Navigation */
 #mainNav {
     min-height: 56px;
-    background-color: #fff;
+    background-color: black;
 }
 
     #mainNav .navbar-toggler {
@@ -16,7 +16,7 @@
         }
 
     #mainNav .navbar-brand {
-        color: #161616;
+        color: rgba(255,215,0, 0.8);
         font-weight: 700;
         padding: .9rem 0;
     }
@@ -362,4 +362,12 @@ a {
 
 footer {
     padding: 5rem 0;
+}
+
+.nav-link {
+    color: rgba(255,215,0, 0.8) !important;
+}
+
+.nav-link:active {
+    color: gold !important;
 }

@@ -1,4 +1,4 @@
-﻿var rectAngular = function (elem, width, height) {
+﻿var rectAngular = function (elem, width, height, heading, colour, font) {
 	var rect = this;
 	rect.area = document.getElementById(elem);
 	rect.ctxt = rect.area.getContext("2d");
@@ -39,9 +39,9 @@
 
 		rect.area.width = width ? width : window.innerWidth;
 		rect.area.height = height ? height : window.innerHeight;
-		rect.ctxt.fillStyle = "#C6BA73";
-		rect.ctxt.strokeStyle = "#C6BA73";
-		rect.ctxt.font = "30px 'DeathStar'";
+		rect.ctxt.fillStyle = colour ? colour : "DodgerBlue";
+		rect.ctxt.strokeStyle = colour ? colour : "DodgerBlue";
+		rect.ctxt.font = font ? font : "30px Verdana";
 		rect.screen();
 	};
 	rect.screen = function () {		
@@ -57,7 +57,7 @@
 		var middle = rect.area.width / 2;
 		
 		/* Write Title */
-		rect.ctxt.fillText("Movie Pong", middle - 100, 80); 
+		rect.ctxt.fillText((heading ? heading : "rectAngular"), middle - 100, 80); 
 		
 		/* Write Instructions */
 		rect.ctxt.fillText("Tap screen to start...", middle - 160, row * 4);
