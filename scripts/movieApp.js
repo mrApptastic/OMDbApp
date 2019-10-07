@@ -60,7 +60,7 @@ movieApp.config(['$provide', '$routeProvider', function ($provide, $routeProvide
                         <div class="movieCardContainer col-md-4 mb-3 mb-md-0" ng-repeat="m in movies.Search" >
                             <div class="movieCard mrShrink card py-4 h-100" ng-click="getMovieDetails(m.imdbID)" data-toggle="modal" data-target="#movieModal">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-star text-primary mb-2"></i>
+                                    <i class="fas fa-film text-primary mb-2 fa-2x"></i>
                                     <h4 class="text-uppercase m-0" ng-bind="m.Title"></h4>
                                     <hr class="my-4">
                                     <img src="{{m.Poster}}" alt="{{m.Title}}" title="More about {{m.Title}}" />
@@ -83,11 +83,11 @@ movieApp.config(['$provide', '$routeProvider', function ($provide, $routeProvide
                           <tr>
                             <td>Your Rating</td>
                             <td>
-                               <i ng-click="selectedMovie.Rate = 1; updateRate(selectedMovie)" ng-class="selectedMovie.Rate >= 1 ? 'text-primary' : ''" class="fas fa-star mb-2 starRate"></i>
-                               <i ng-click="selectedMovie.Rate = 2; updateRate(selectedMovie)" ng-class="selectedMovie.Rate >= 2 ? 'text-primary' : ''" class="fas fa-star mb-2 starRate"></i>
-                               <i ng-click="selectedMovie.Rate = 3; updateRate(selectedMovie)" ng-class="selectedMovie.Rate >= 3 ? 'text-primary' : ''" class="fas fa-star mb-2 starRate"></i>
-                               <i ng-click="selectedMovie.Rate = 4; updateRate(selectedMovie)" ng-class="selectedMovie.Rate >= 4 ? 'text-primary' : ''" class="fas fa-star mb-2 starRate"></i>
-                               <i ng-click="selectedMovie.Rate = 5; updateRate(selectedMovie)" ng-class="selectedMovie.Rate == 5 ? 'text-primary' : ''" class="fas fa-star mb-2 starRate"></i>
+                               <i ng-click="selectedMovie.Rate = 1; updateRate(selectedMovie)" ng-class="selectedMovie.TempRate >= 1 || (selectedMovie.Rate >= 1 && ! selectedMovie.TempRate) ? 'text-primary' : ''" class="fas fa-star mb-2 starRate" ng-mouseenter="selectedMovie.TempRate = 1;" ng-mouseleave="selectedMovie.TempRate = null;"></i>
+                               <i ng-click="selectedMovie.Rate = 2; updateRate(selectedMovie)" ng-class="selectedMovie.TempRate >= 2 || (selectedMovie.Rate >= 2 && ! selectedMovie.TempRate) ? 'text-primary' : ''" class="fas fa-star mb-2 starRate" ng-mouseenter="selectedMovie.TempRate = 2;" ng-mouseleave="selectedMovie.TempRate = null;"></i>
+                               <i ng-click="selectedMovie.Rate = 3; updateRate(selectedMovie)" ng-class="selectedMovie.TempRate >= 3 || (selectedMovie.Rate >= 3 && ! selectedMovie.TempRate) ? 'text-primary' : ''" class="fas fa-star mb-2 starRate" ng-mouseenter="selectedMovie.TempRate = 3;" ng-mouseleave="selectedMovie.TempRate = null;"></i>  
+                               <i ng-click="selectedMovie.Rate = 4; updateRate(selectedMovie)" ng-class="selectedMovie.TempRate >= 4 || (selectedMovie.Rate >= 4 && ! selectedMovie.TempRate) ? 'text-primary' : ''" class="fas fa-star mb-2 starRate" ng-mouseenter="selectedMovie.TempRate = 4;" ng-mouseleave="selectedMovie.TempRate = null;"></i>  
+                               <i ng-click="selectedMovie.Rate = 5; updateRate(selectedMovie)" ng-class="selectedMovie.TempRate >= 5 || (selectedMovie.Rate >= 5 && ! selectedMovie.TempRate) ? 'text-primary' : ''" class="fas fa-star mb-2 starRate" ng-mouseenter="selectedMovie.TempRate = 5;" ng-mouseleave="selectedMovie.TempRate = null;"></i>
                             </td>
                           </tr> 
                           <tr>
@@ -141,14 +141,14 @@ movieApp.config(['$provide', '$routeProvider', function ($provide, $routeProvide
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
                         <button type="button" class="close" ng-click="removeRate(m.imdbID)">&times;</button>
-                            <i ng-click="m.Rate = 1; updateRate(m)" ng-class="m.Rate >= 1 ? 'text-primary' : ''" class="fas fa-star mb-2 starRate"></i>
-                               <i ng-click="m.Rate = 2; updateRate(m)" ng-class="m.Rate >= 2 ? 'text-primary' : ''" class="fas fa-star mb-2 starRate"></i>
-                               <i ng-click="m.Rate = 3; updateRate(m)" ng-class="m.Rate >= 3 ? 'text-primary' : ''" class="fas fa-star mb-2 starRate"></i>
-                               <i ng-click="m.Rate = 4; updateRate(m)" ng-class="m.Rate >= 4 ? 'text-primary' : ''" class="fas fa-star mb-2 starRate"></i>
-                               <i ng-click="m.Rate = 5; updateRate(m)" ng-class="m.Rate == 5 ? 'text-primary' : ''" class="fas fa-star mb-2 starRate"></i>
-                                <h4 class="text-uppercase m-0" ng-bind="m.Title"></h4>
+                            <i ng-click="m.Rate = 1; updateRate(m)" ng-class="m.TempRate >= 1 || (m.Rate >= 1 && ! m.TempRate) ? 'text-primary' : ''" class="fas fa-star mb-2 starRate" ng-mouseenter="m.TempRate = 1;" ng-mouseleave="m.TempRate = null;"></i>
+                            <i ng-click="m.Rate = 2; updateRate(m)" ng-class="m.TempRate >= 2 || (m.Rate >= 2 && ! m.TempRate) ? 'text-primary' : ''" class="fas fa-star mb-2 starRate" ng-mouseenter="m.TempRate = 2;" ng-mouseleave="m.TempRate = null;"></i>
+                            <i ng-click="m.Rate = 3; updateRate(m)" ng-class="m.TempRate >= 3 || (m.Rate >= 3 && ! m.TempRate) ? 'text-primary' : ''" class="fas fa-star mb-2 starRate" ng-mouseenter="m.TempRate = 3;" ng-mouseleave="m.TempRate = null;"></i>
+                            <i ng-click="m.Rate = 4; updateRate(m)" ng-class="m.TempRate >= 4 || (m.Rate >= 4 && ! m.TempRate) ? 'text-primary' : ''" class="fas fa-star mb-2 starRate" ng-mouseenter="m.TempRate = 4;" ng-mouseleave="m.TempRate = null;"></i>
+                            <i ng-click="m.Rate = 5; updateRate(m)" ng-class="m.TempRate >= 5 || (m.Rate >= 5 && ! m.TempRate) ? 'text-primary' : ''" class="fas fa-star mb-2 starRate" ng-mouseenter="m.TempRate = 5;" ng-mouseleave="m.TempRate = null;"></i>
+                                 <h4 class="text-uppercase m-0" ng-bind="m.Title"></h4>
                                 <hr class="my-4">
-                                <img src="{{m.Poster}}" alt="{{m.Title}}" title="More about {{m.Title}}" />
+                                <img src="{{m.Poster}}" alt="{{m.Title}}" title="More about {{m.Title}}" ng-click="getMovieDetails(m.imdbID)" data-toggle="modal" data-target="#movieModal" style="cursor: pointer;" />
                                 <hr class="my-4">
                                 <h4 class="text-uppercase m-0" ng-bind="m.Year + ', ' + m.Type"></h4>
                         </div>
@@ -203,6 +203,9 @@ movieApp.controller("mainController", ["$scope", "dataService", "messageService"
         else {
             $scope.favourites.push(movie);
         } 
+
+        $scope.favourites = $scope.favourites.sort(function (a, b) { return b.Rate - a.Rate});
+
         localStorage["favouriteMovies"] = JSON.stringify($scope.favourites);
     };
     $scope.removeRate = function (id) {
