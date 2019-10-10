@@ -1,0 +1,21 @@
+﻿Ny Gmail oprettet til formålet:	
+
+E-Mail:	mrmrnrnr2468@gmail.com	
+
+Pass:	Admintest-2468	
+
+
+
+Umbraco:	
+
+User:	Mrmrnrnr
+	
+E-Mail:	mrmrnrnr2468@gmail.com	
+
+Pass:	Admintest-2468
+	
+
+
+API:	
+
+Key:	74adaf2c
